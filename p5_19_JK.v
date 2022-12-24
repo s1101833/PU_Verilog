@@ -6,12 +6,12 @@ wire [2:0] state;
 
 assign JA = ~B & x;
 assign KA = 1'b1;
-assign JB = (~C & ~x) + A;
+assign JB = (~C & ~x) | A;
 assign KB = C ^ x;
-assign JC = (A & x) + (~A & ~B & ~x);
+assign JC = (A & x) | (~A & ~B & ~x);
 assign KC = x;
 assign state = {A, B, C};
-assign y = (~A & x) + (~A & ~B & C);
+assign y = (~A & x) | (~A & ~B & C);
 
 JKFF JKFFA (A, JA, KA, clk, rst);
 JKFF JKFFB (B, JB, KB, clk, rst);
