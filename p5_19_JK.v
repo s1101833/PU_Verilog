@@ -1,4 +1,4 @@
-//s1101833 óõçkçã Lab8
+//s1101833 ßıØ—ª® Lab8
 module p5_19_JK ( output y, input x, clk, rst);
 
 wire A, B, C, JA, KA, JB, KB, JC, KC;
@@ -8,7 +8,7 @@ assign JA = ~B & x;
 assign KA = 1'b1;
 assign JB = (~C & ~x) + A;
 assign KB = C ^ x;
-assign JC = (~A & x) + (~A & ~B & ~x);
+assign JC = (A & x) + (~A & ~B & ~x);
 assign KC = x;
 assign state = {A, B, C};
 assign y = (~A & x) + (~A & ~B & C);
